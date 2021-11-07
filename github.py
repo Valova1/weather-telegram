@@ -1,7 +1,7 @@
 import telebot,pyowm,requests
 from telebot import types
 temp = ''
-bot = telebot.TeleBot(2050928873:AAGjWHxgCJQU5Hh1Z2KP4uAn14mr4plgRcQ)
+bot = telebot.TeleBot('2050928873:AAGjWHxgCJQU5Hh1Z2KP4uAn14mr4plgRcQ')
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     print(message.text + ' от ' + str(message.from_user.id))
@@ -14,7 +14,7 @@ def get_ass(message):
     global temp
     g = message.text
     temp = g
-    ow = pyowm.OWM(2b94c840f10e17da24b1edf36b4a950f)
+    ow = pyowm.OWM('2b94c840f10e17da24b1edf36b4a950f')
     try:
         mrg = ow.weather_manager()
         observation = mrg.weather_at_place(g)
